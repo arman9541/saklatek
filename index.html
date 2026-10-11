@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Saklatek | RootNode Fold foldable cargo containers</title>
+<meta name="description" content="Saklatek builds RootNode Fold, a foldable cargo system with full 40 ft container capacity that folds flat for return transport.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f7f8;--surface:#fff;--ink:#12262b;--muted:#506469;--line:#d5dfe2;--deep:#0d4a57;--teal:#17a3a3;--steel:#8b9aa0;--steel-d:#5b6a70;--panel:#c9d3d7;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1a1e;--surface:#12262b;--ink:#e8f0f2;--muted:#9bb0b5;--line:#244047;--deep:#5fd0d0;--teal:#2bc4c4;--steel:#6d7f85;--steel-d:#9fb0b5;--panel:#2a4249}}
+:root[data-theme="dark"]{--bg:#0b1a1e;--surface:#12262b;--ink:#e8f0f2;--muted:#9bb0b5;--line:#244047;--deep:#5fd0d0;--teal:#2bc4c4;--steel:#6d7f85;--steel-d:#9fb0b5;--panel:#2a4249}
+html{scroll-padding-top:90px;scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Source Sans 3",system-ui,sans-serif}
+h1,h2,h3{font-family:Sora,system-ui,sans-serif;line-height:1.15;margin:0 0 .5em;letter-spacing:-.02em}
+h1{font-size:clamp(2.4rem,6vw,4.2rem)}h2{font-size:clamp(1.7rem,3.5vw,2.5rem)}h3{font-size:1.15rem;letter-spacing:-.01em}
+p{margin:0 0 1em;max-width:62ch}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+section{padding:84px 0}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:16px}
+.logo{font:700 1.25rem Sora,sans-serif;letter-spacing:.08em;text-decoration:none;display:flex;align-items:center;gap:10px;color:var(--deep)}
+.logo-img{height:62px;width:auto;display:block}.flogo .logo-img{height:96px}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+nav ul a{text-decoration:none;font-weight:600;color:var(--muted)}nav ul a:hover{color:var(--ink)}
+.btn{display:inline-block;background:var(--deep);color:#fff;font:600 1rem "Source Sans 3",sans-serif;padding:13px 24px;border:0;border-radius:6px;text-decoration:none;cursor:pointer}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn{color:#06242a}}
+:root[data-theme="dark"] .btn{color:#06242a}
+.btn:hover{background:var(--teal)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--steel)}
+.btn.ghost:hover{border-color:var(--teal);background:transparent}
+.hero{padding:64px 0 72px}
+.hero p.lead{font-size:1.25rem;color:var(--muted)}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.stage-card{margin-top:44px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:26px 24px 20px}
+.stage{position:relative;height:250px}
+.mod{position:absolute;top:30px;height:190px;background:var(--panel);border:7px solid var(--steel-d);border-radius:4px;transition:left .9s cubic-bezier(.6,.05,.2,1),width .9s cubic-bezier(.6,.05,.2,1),background .4s}
+.mod svg{position:absolute;inset:0;width:100%;height:100%;opacity:.55;transition:opacity .4s}
+.mod::before,.mod::after{content:"";position:absolute;width:14px;height:14px;background:var(--teal);border-radius:50%;top:-11px}
+.mod::before{left:-11px}.mod::after{right:-11px}
+.mod b{position:absolute;inset:0;display:grid;place-items:center;font:700 .85rem Sora,sans-serif;letter-spacing:.14em;color:var(--steel-d);opacity:.8}
+.pallet{position:absolute;bottom:0;height:14px;background:var(--steel-d);border-radius:2px;transition:left .9s cubic-bezier(.6,.05,.2,1),width .9s cubic-bezier(.6,.05,.2,1)}
+.stage[data-state="assembled"] .m1{left:0;width:33.4%}.stage[data-state="assembled"] .m2{left:33.3%;width:33.4%}.stage[data-state="assembled"] .m3{left:66.6%;width:33.4%}
+.stage[data-state="assembled"] .pallet{left:0;width:100%}
+.stage[data-state="folded"] .m1{left:41%;width:5.5%}.stage[data-state="folded"] .m2{left:47%;width:5.5%}.stage[data-state="folded"] .m3{left:53%;width:5.5%}
+.stage[data-state="folded"] .pallet{left:36%;width:28%}
+.stage[data-state="folded"] .mod svg,.stage[data-state="folded"] .mod b{opacity:0}
+.controls{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:18px}
+.seg{display:inline-flex;border:1.5px solid var(--steel);border-radius:8px;overflow:hidden}
+.seg button{font:600 .95rem "Source Sans 3",sans-serif;padding:10px 20px;background:transparent;color:var(--ink);border:0;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--deep);color:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .seg button[aria-pressed="true"]{color:#06242a}}
+:root[data-theme="dark"] .seg button[aria-pressed="true"]{color:#06242a}
+dl.dims{display:flex;gap:28px;margin:0;flex-wrap:wrap}
+dl.dims div{min-width:90px}dt{font-size:.85rem;color:var(--muted)}dd{margin:0;font:700 1.25rem Sora,sans-serif}
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:34px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px}
+.box p{margin:0;color:var(--muted)}
+.band{background:var(--surface);border-block:1px solid var(--line)}
+.two{display:grid;gap:48px;grid-template-columns:1fr 1fr;align-items:center}
+.joint{width:100%;max-width:420px;justify-self:center}
+.steps{list-style:none;padding:0;margin:34px 0 0;display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));counter-reset:s}
+.steps li{counter-increment:s;border-top:3px solid var(--teal);padding-top:14px}
+.steps li::before{content:counter(s);display:block;font:700 2rem Sora,sans-serif;color:var(--deep)}
+.steps p{color:var(--muted);margin:0}
+.lock{display:flex;gap:28px;margin-top:22px;flex-wrap:wrap}
+.lock span{display:flex;align-items:center;gap:10px;font-weight:600}
+.dot{width:18px;height:18px;border-radius:50%;display:inline-block}
+table{width:100%;border-collapse:collapse;margin-top:28px;background:var(--surface);border:1px solid var(--line)}
+th,td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line)}
+th{font-weight:600;color:var(--muted);width:42%}
+.tw{overflow-x:auto}
+.checks{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px}
+.checks li{padding-left:32px;position:relative}
+.checks li::before{content:"";position:absolute;left:0;top:.35em;width:18px;height:18px;border-radius:50%;background:var(--teal)}
+.checks li::after{content:"";position:absolute;left:6px;top:.5em;width:4px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+form{display:grid;gap:16px;max-width:560px}
+label{display:grid;gap:6px;font-weight:600}
+input,select,textarea{font:inherit;padding:12px 14px;border:1.5px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink)}
+textarea{min-height:110px;resize:vertical}
+.note{font-size:.95rem;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:.95rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media (max-width:780px){nav ul{display:none}.two{grid-template-columns:1fr}section{padding:60px 0}.stage{height:200px}.mod{height:150px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav aria-label="Main">
+<a class="logo" href="#top" aria-label="Saklatek home"><svg class="logo-img" viewBox="100 24 320 204" role="img" aria-label="Saklatek RootNode Fold logo">
+<defs><linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0fb9b1"/><stop offset="1" stop-color="#0b5f8a"/></linearGradient></defs>
+
+<g transform="translate(106 30)"><polygon points="9,0 75,0 84,9 84,75 75,84 9,84 0,75 0,9" fill="none" stroke="url(#lg1)" stroke-width="4" stroke-linejoin="round"/><polygon points="17,11 67,11 73,17 73,67 67,73 17,73 11,67 11,17" fill="none" style="stroke:var(--ink)" stroke-opacity=".55" stroke-width="1.5"/><path d="M11 11L73 73M73 11L11 73" style="stroke:var(--ink)" stroke-opacity=".35" stroke-width="1.5"/><polygon points="119,0 185,0 194,9 194,75 185,84 119,84 110,75 110,9" fill="url(#lg1)" stroke="url(#lg1)" stroke-width="4" stroke-linejoin="round"/><polygon points="127,11 177,11 183,17 183,67 177,73 127,73 121,67 121,17" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.5"/><path d="M121 11L183 73M183 11L121 73" stroke="#fff" stroke-opacity=".35" stroke-width="1.5"/><polygon points="229,0 295,0 304,9 304,75 295,84 229,84 220,75 220,9" fill="none" stroke="url(#lg1)" stroke-width="4" stroke-linejoin="round"/><polygon points="237,11 287,11 293,17 293,67 287,73 237,73 231,67 231,17" fill="none" style="stroke:var(--ink)" stroke-opacity=".55" stroke-width="1.5"/><path d="M231 11L293 73M293 11L231 73" style="stroke:var(--ink)" stroke-opacity=".35" stroke-width="1.5"/><line x1="84" y1="20" x2="110" y2="20" stroke="url(#lg1)" stroke-width="4"/><circle cx="97.0" cy="20" r="7" style="fill:var(--bg)" stroke="url(#lg1)" stroke-width="3"/><line x1="84" y1="64" x2="110" y2="64" stroke="url(#lg1)" stroke-width="4"/><circle cx="97.0" cy="64" r="7" style="fill:var(--bg)" stroke="url(#lg1)" stroke-width="3"/><rect x="94.0" y="33.0" width="6" height="18" rx="2" fill="url(#lg1)"/><line x1="194" y1="20" x2="220" y2="20" stroke="url(#lg1)" stroke-width="4"/><circle cx="207.0" cy="20" r="7" style="fill:var(--bg)" stroke="url(#lg1)" stroke-width="3"/><line x1="194" y1="64" x2="220" y2="64" stroke="url(#lg1)" stroke-width="4"/><circle cx="207.0" cy="64" r="7" style="fill:var(--bg)" stroke="url(#lg1)" stroke-width="3"/><rect x="204.0" y="33.0" width="6" height="18" rx="2" fill="url(#lg1)"/></g>
+<text x="260" y="186" text-anchor="middle" font-family="Sora,Eurostile,'Segoe UI',Arial,sans-serif" font-weight="700" font-size="42" letter-spacing="12" style="fill:var(--ink)">SAKLATEK</text>
+<text x="260" y="218" text-anchor="middle" font-family="Sora,Eurostile,'Segoe UI',Arial,sans-serif" font-size="14" letter-spacing="9" style="fill:var(--deep)">ROOTNODE FOLD</text>
+</svg></a>
+<ul><li><a href="#product">Product</a></li><li><a href="#fold">How it folds</a></li><li><a href="#tech">Technology</a></li><li><a href="#specs">Specs</a></li></ul>
+<a class="btn" href="#contact">Request a quote</a></nav></div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+<h1>Full container capacity. Folds back to a quarter of the space.</h1>
+<p class="lead">RootNode Fold is a foldable cargo system from Saklatek. Three modules lock together into a 40 ft container-sized load, then fold flat for the trip home on a standard pallet footprint.</p>
+<div class="cta"><a class="btn" href="#contact">Request a quote</a><a class="btn ghost" href="#specs">See the specs</a></div>
+
+<div class="stage-card" id="product">
+<div class="stage" id="stage" data-state="assembled" role="img" aria-label="Animation of three RootNode Fold modules joined into a container, or folded into a compact stack">
+<div class="mod m1"><svg preserveAspectRatio="none" viewBox="0 0 10 10"><path d="M0 0L10 10M10 0L0 10" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke" style="color:var(--steel-d)"/></svg></div>
+<div class="mod m2"><svg preserveAspectRatio="none" viewBox="0 0 10 10"><path d="M0 0L10 10M10 0L0 10" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke" style="color:var(--steel-d)"/></svg><b>SAKLATEK</b></div>
+<div class="mod m3"><svg preserveAspectRatio="none" viewBox="0 0 10 10"><path d="M0 0L10 10M10 0L0 10" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke" style="color:var(--steel-d)"/></svg></div>
+<div class="pallet"></div>
+</div>
+<div class="controls">
+<div class="seg" role="group" aria-label="Choose form"><button id="bA" aria-pressed="true">Assembled</button><button id="bF" aria-pressed="false">Folded</button></div>
+<dl class="dims" aria-live="polite"><div><dt>Length / depth</dt><dd id="d1">12.192 m</dd></div><div><dt>Width</dt><dd>2.438 m</dd></div><div><dt>Height</dt><dd>2.591 m</dd></div></dl>
+</div></div>
+</div></section>
+
+<section class="band"><div class="wrap">
+<h2>Why shippers choose RootNode Fold</h2>
+<div class="grid">
+<div class="box"><h3>Container-level capacity</h3><p>Three modules join to match a 40 ft container, so loads ship as they would in any standard box.</p></div>
+<div class="box"><h3>Foldable return trips</h3><p>Empty boxes take up space and money on the way back. Folded units pack down to about 1.2 m thick.</p></div>
+<div class="box"><h3>Built for heavy cargo</h3><p>Curved joints and internal ribs spread load instead of concentrating it at the corners.</p></div>
+<div class="box"><h3>Standard handling</h3><p>Works with standard forklifts and pallet systems, and stacks up to three high when folded.</p></div>
+</div></div></section>
+
+<section id="fold"><div class="wrap">
+<h2>Folding takes minutes, not hours</h2>
+<p>Unfolding is the same process in reverse. Crews need no special equipment.</p>
+<ol class="steps">
+<li><h3>Release the locks</h3><p>Open each quick-lock one by one.</p></li>
+<li><h3>Fold the side panels</h3><p>Hinged side panels swing in.</p></li>
+<li><h3>Fold the top panels</h3><p>Hinged top panels close down onto them.</p></li>
+<li><h3>Secure for transport</h3><p>Strap the stack or lock the frame, then load it.</p></li>
+</ol></div></section>
+
+<section class="band" id="tech"><div class="wrap two">
+<div>
+<h2>The RootNode joint</h2>
+<p>Inspired by how trees branch, the RootNode joint blends beams into a smooth curve instead of a sharp corner. That reduces stress concentration, and internal vertical and horizontal ribs carry load through the central core and into the frame.</p>
+<h3>Quick-lock in three actions</h3>
+<p style="margin-bottom:.4em">Align on the guiding surface, slide and lock with the cam mechanism, then verify with the visual indicator.</p>
+<div class="lock"><span><i class="dot" style="background:#2fa84f"></i>Green: locked</span><span><i class="dot" style="background:#d6403a"></i>Red: unlocked</span></div>
+</div>
+<svg class="joint" viewBox="0 0 400 400" role="img" aria-label="Diagram of a RootNode joint with beams meeting at a rounded center">
+<g stroke="var(--steel-d)" stroke-width="3" fill="var(--panel)">
+<rect x="20" y="170" width="120" height="60" rx="4"/><rect x="260" y="170" width="120" height="60" rx="4"/><rect x="170" y="20" width="60" height="120" rx="4"/><rect x="170" y="260" width="60" height="120" rx="4"/>
+<path d="M140 170C170 170 170 140 170 140H230C230 140 230 170 260 170V230C230 230 230 260 230 260H170C170 260 170 230 140 230Z" fill="var(--surface)"/></g>
+<g stroke="var(--teal)" stroke-width="5" fill="none" stroke-linecap="round"><path d="M145 200H255M200 145V255"/><path d="M165 165Q200 190 235 165M165 235Q200 210 235 235" stroke-width="3"/></g>
+<circle cx="200" cy="200" r="14" fill="var(--teal)"/>
+<circle cx="130" cy="200" r="9" fill="#2fa84f"/>
+</svg>
+</div></section>
+
+<section id="specs"><div class="wrap">
+<h2>Specifications</h2>
+<div class="tw"><table>
+<tr><th>Configuration</th><td>3 modules, equivalent to a 40 ft container</td></tr>
+<tr><th>Assembled length</th><td>12.192 m</td></tr>
+<tr><th>Width</th><td>2.438 m</td></tr>
+<tr><th>Height</th><td>2.591 m</td></tr>
+<tr><th>Folded thickness</th><td>About 1.2 m</td></tr>
+<tr><th>Joints</th><td>RootNode biostructural joints with internal load-spreading ribs</td></tr>
+<tr><th>Locking</th><td>Cam quick-lock with green and red status indicator</td></tr>
+<tr><th>Stacking</th><td>Up to 3 high when folded</td></tr>
+<tr><th>Handling</th><td>Standard forklift and pallet systems</td></tr>
+</table></div>
+<ul class="checks"><li>Fits inside a standard container or on a truck when folded</li><li>Designed for heavy industrial cargo</li><li>Fast, secure connection system</li></ul>
+</div></section>
+
+<section class="band" id="contact"><div class="wrap two">
+<div><h2>Talk to Saklatek</h2><p>Tell us what you ship and how often. We will reply with options and pricing for RootNode Fold.</p></div>
+<form id="f">
+<label>Name<input name="n" required autocomplete="name"></label>
+<label>Email<input name="e" type="email" required autocomplete="email"></label>
+<label>Company<input name="c" autocomplete="organization"></label>
+<label>What do you ship?<textarea name="m" required></textarea></label>
+<button class="btn" type="submit">Send request</button>
+<p class="note" id="fn">This opens your email app with the request filled in.</p>
+</form></div></section>
+</main>
+
+<footer><div class="wrap"><span class="flogo"><svg class="logo-img" viewBox="100 24 320 204" role="img" aria-label="Saklatek RootNode Fold logo">
+<defs><linearGradient id="lg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0fb9b1"/><stop offset="1" stop-color="#0b5f8a"/></linearGradient></defs>
+
+<g transform="translate(106 30)"><polygon points="9,0 75,0 84,9 84,75 75,84 9,84 0,75 0,9" fill="none" stroke="url(#lg2)" stroke-width="4" stroke-linejoin="round"/><polygon points="17,11 67,11 73,17 73,67 67,73 17,73 11,67 11,17" fill="none" style="stroke:var(--ink)" stroke-opacity=".55" stroke-width="1.5"/><path d="M11 11L73 73M73 11L11 73" style="stroke:var(--ink)" stroke-opacity=".35" stroke-width="1.5"/><polygon points="119,0 185,0 194,9 194,75 185,84 119,84 110,75 110,9" fill="url(#lg2)" stroke="url(#lg2)" stroke-width="4" stroke-linejoin="round"/><polygon points="127,11 177,11 183,17 183,67 177,73 127,73 121,67 121,17" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.5"/><path d="M121 11L183 73M183 11L121 73" stroke="#fff" stroke-opacity=".35" stroke-width="1.5"/><polygon points="229,0 295,0 304,9 304,75 295,84 229,84 220,75 220,9" fill="none" stroke="url(#lg2)" stroke-width="4" stroke-linejoin="round"/><polygon points="237,11 287,11 293,17 293,67 287,73 237,73 231,67 231,17" fill="none" style="stroke:var(--ink)" stroke-opacity=".55" stroke-width="1.5"/><path d="M231 11L293 73M293 11L231 73" style="stroke:var(--ink)" stroke-opacity=".35" stroke-width="1.5"/><line x1="84" y1="20" x2="110" y2="20" stroke="url(#lg2)" stroke-width="4"/><circle cx="97.0" cy="20" r="7" style="fill:var(--bg)" stroke="url(#lg2)" stroke-width="3"/><line x1="84" y1="64" x2="110" y2="64" stroke="url(#lg2)" stroke-width="4"/><circle cx="97.0" cy="64" r="7" style="fill:var(--bg)" stroke="url(#lg2)" stroke-width="3"/><rect x="94.0" y="33.0" width="6" height="18" rx="2" fill="url(#lg2)"/><line x1="194" y1="20" x2="220" y2="20" stroke="url(#lg2)" stroke-width="4"/><circle cx="207.0" cy="20" r="7" style="fill:var(--bg)" stroke="url(#lg2)" stroke-width="3"/><line x1="194" y1="64" x2="220" y2="64" stroke="url(#lg2)" stroke-width="4"/><circle cx="207.0" cy="64" r="7" style="fill:var(--bg)" stroke="url(#lg2)" stroke-width="3"/><rect x="204.0" y="33.0" width="6" height="18" rx="2" fill="url(#lg2)"/></g>
+<text x="260" y="186" text-anchor="middle" font-family="Sora,Eurostile,'Segoe UI',Arial,sans-serif" font-weight="700" font-size="42" letter-spacing="12" style="fill:var(--ink)">SAKLATEK</text>
+<text x="260" y="218" text-anchor="middle" font-family="Sora,Eurostile,'Segoe UI',Arial,sans-serif" font-size="14" letter-spacing="9" style="fill:var(--deep)">ROOTNODE FOLD</text>
+</svg></span><span>Nature guides the form. Engineering makes it real. Saklatek connects the world.</span><span>&copy; 2026 Saklatek</span></div></footer>
+
+<script>
+(function(){
+var st=document.getElementById('stage'),a=document.getElementById('bA'),f=document.getElementById('bF'),d=document.getElementById('d1');
+function set(s){st.dataset.state=s;a.setAttribute('aria-pressed',s==='assembled');f.setAttribute('aria-pressed',s==='folded');d.textContent=s==='assembled'?'12.192 m':'About 1.2 m'}
+a.onclick=function(){set('assembled')};f.onclick=function(){set('folded')};
+document.getElementById('f').onsubmit=function(e){e.preventDefault();var x=e.target,b='Name: '+x.n.value+'\nCompany: '+x.c.value+'\n\n'+x.m.value;
+location.href='mailto:info@saklatek.com?subject='+encodeURIComponent('RootNode Fold quote request')+'&body='+encodeURIComponent(b)};
+})();
+</script>
+</body>
+</html>
